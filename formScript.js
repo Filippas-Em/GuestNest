@@ -45,9 +45,83 @@ form.addEventListener('input', function(event) {
             emailLabel.style.color = "limegreen";
     }
     
-    
-    
-    
+    const password = document.getElementById("password"); 
+    const passwordText = password.nextElementSibling; 
+    const passwordLabel = password.previousElementSibling;
+    const regex = /\d/; 
+    let valid = false;
+
+    if (password.value.length <4 && password.value.trim() !== "" ) {
+        if (regex.test(password.value)) {
+            passwordText.innerHTML = "Must be at least 4 characters long";
+            
+        } else {
+            passwordText.innerHTML = "Must be at least 4 characters and contain at least one number";
+            
+        }
+        
+        passwordText.style.color = "red";
+        password.style.borderColor = "red";
+        passwordLabel.style.color = "red";
+
+    } else if (password.value.length >10){
+        passwordText.innerHTML = "Must be less than 10 characters";
+        passwordText.style.color = "red";
+        password.style.borderColor = "red";
+        passwordLabel.style.color = "red";
+    } else if (password.value.trim() === ""){
+        passwordText.innerHTML = "";
+        password.style.borderColor = "black";
+        passwordLabel.style.color = "black";
+
+    }else {
+        if (regex.test(password.value)) {
+            passwordText.innerHTML = "";
+            password.style.borderColor = "limegreen";
+            passwordLabel.style.color = "limegreen";
+            valid = true;
+        } else if ( password.value.trim() !== "" ) {
+            passwordText.innerHTML = "Must contain at least one number";
+            passwordText.style.color = "red";
+            password.style.borderColor = "red";
+            passwordLabel.style.color = "red";
+            
+        }
+    }
+
+    passwordConfirm = document.getElementById("passwordConfirm");
+    passwordConfirmText = passwordConfirm.nextElementSibling;
+    passwordConfirmLabel = passwordConfirm.previousElementSibling;
+
+    console.log(valid);
+
+
+    if (passwordConfirm.value.trim() === "") {
+        passwordConfirmText.innerHTML = "";
+        passwordConfirm.style.borderColor = "black";
+        passwordConfirmLabel.style.color = "black";
+    } else if (passwordConfirm.value !== password.value && valid === true) {
+        passwordConfirmText.innerHTML = "Passwords do not match";
+        passwordConfirmText.style.color = "red";
+        passwordConfirm.style.borderColor = "red";
+        passwordConfirmLabel.style.color = "red";
+    } else if (valid === true) {
+        passwordConfirmText.innerHTML = "";
+        passwordConfirm.style.borderColor = "limegreen";
+        passwordConfirmLabel.style.color = "limegreen";
+    } 
+
+    const username = document.getElementById("username");
+    const usernameLabel = username.previousElementSibling;    
+
+    if (username.value.trim()!=="") {
+        username.style.borderColor = "limegreen";
+        usernameLabel.style.color = "limegreen";
+    } else {
+        username.style.borderColor = "black";
+        usernameLabel.style.color = "black";
+    }
+
 });
 
 
