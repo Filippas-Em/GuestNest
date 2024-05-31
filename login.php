@@ -14,28 +14,15 @@
 
 <div class="container">
     <form id="contactForm" action="">
-        <h3>Create your Account</h3>
-        <div class="inputField">
-            <label for="firstName">First Name</label>
-            <input type="text" name="firstName" id="firstName" class="input"> 
-            <p></p>
-        </div>
-        <div class="inputField">
-            <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" id="lastName" class="input">
-            <p></p>
-        </div>
+        <h3>Log In</h3>
+        
         <div class="inputField">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" class="input">
             <p></p>
         </div>
 
-        <div class="inputField"> 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="input">
-            <p></p>
-        </div>
+        
 
         <div class="inputField">
             <label for="password">Password</label>
@@ -43,17 +30,8 @@
             <p id="passwordText"></p>
         </div>
     
-        <div class="inputField cp">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="passwordConfirm" class="input">
-            <p></p>
-        </div>
-
-       
-        
-        
-        <input type="submit" value="Sign up" id="button">
-        <p>Already a user? <a href="login.php">Log In!</a></p>
+        <input type="submit" value="Log In" id="button">
+        <p>Don't have an account ? <a href="signup.html">Create one!</a></p>
     </form>
 </div>
 

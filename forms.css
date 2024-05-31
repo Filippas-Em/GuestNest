@@ -42,7 +42,7 @@ form {
 
 form label {
     position: absolute;
-    top: 50px;
+    top: 25px;
     left: 5px;
     transition: all 0.3s ease;
 }
@@ -50,7 +50,7 @@ form label {
 form input {
 
     height: 40px ;
-    margin-top: 40px;
+    margin-top: 15px;
     width: 100%;
     top: 5px;
     font-size: 20px;
@@ -84,4 +84,16 @@ form h3 {
 
 input:focus {
     outline: none; 
+}
+
+
+a {
+    text-decoration: none;
+    color: #3a86ff;
+      
+}
+
+.inputField p {
+    height: 1rem;
+    margin-top: 5px;
 }
