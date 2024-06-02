@@ -1,16 +1,4 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-}
 
-
-.container {
-    display: grid;
-    height: 100vh;
-    place-items: center;
-}
 
 form {
     border: solid 1px #ccc;
@@ -63,7 +51,7 @@ form input {
 
 #button{
     width: 40%;
-    background-color: #3a86ff;
+    background-color: #FF5A5F;
     color: white;
     transition: all 0.3s ease;
     border: none;

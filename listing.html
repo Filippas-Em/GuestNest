@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navbars.css">
+    <link rel="stylesheet" href="forms.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <nav class="desktopNav">
+            <ul >
+                <li><a href="index.html">Guest Nest</a></li>
+                <li id="listing"class="lout"><a href="">Create Listing</a></li>
+                <li id="login" class="login"><a href="#">Log In</a></li>
+                <li id="logout" class="lout" ><a href="">Log Out</a></li>
+            </ul>
+        </nav>
+        <nav class="mobileNav"></nav>   
+
+        <div class="multimedia">
+            <div class="drop">
+                <h3>Drop your Image Here!</h3>
+            </div>
+    
+            <div class="listingContainer">
+                <form class="listingForm" action="">
+                    <h3>Create a Listing!</h3>
+    
+                    <div class="inputField">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" class="input"> 
+                        <p></p>
+                    </div>
+                    <div class="inputField">
+                        <label for="location">Apartment Location</label>
+                        <input type="text" name="location" id="location" class="input"> 
+                        <p></p>
+                    </div>
+                    <div class="inputField">
+                        <label for="rooms">Number of Rooms</label>
+                        <input type="text" name="rooms" id="rooms" class="input"> 
+                        <p></p>
+                    </div>
+                    <div class="inputField">
+                        <label for="price">Price per Night</label>
+                        <input type="text" name="price" id="price" class="input"> 
+                        <p></p>
+                    </div>
+    
+                    <input type="submit" name="" id="button" value="Submit">
+                        
+                </form>
+            </div>
+        </div>
+
+        
+
+    </div>
+    
+    <div class="authForms hidden" id="test">
+        <div class="selection">
+            <div class="loginDiv">
+                <button id="loginpopup" class="popupBtn">Login</button>
+            </div>
+            <div class="signupDiv">
+                <button id="signuppopup" class="popupBtn">Sign Up</button>
+            </div>
+        </div>
+
+        <form id="contactFom" class="logIn" action="">
+            
+            <div class="inputField">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="usernames" class="input">
+                <p></p>
+            </div>
+    
+            
+    
+            <div class="inputField">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="passwords" class="input">
+                <p id="passwordText"></p>
+            </div>
+        
+            <input type="submit" value="Log In" id="button">
+        </form>
+ 
+        <form id="contactForm" class="signUp hidden" action="">
+            <div class="inputField">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" class="input"> 
+                <p></p>
+            </div>
+            <div class="inputField">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" class="input">
+                <p></p>
+            </div>
+            <div class="inputField">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="input">
+                <p></p>
+            </div>
+    
+            <div class="inputField"> 
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="input">
+                <p></p>
+            </div>
+    
+            <div class="inputField">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="input">
+                <p id="passwordText"></p>
+            </div>
+        
+            <div class="inputField cp">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="passwordConfirm" class="input">
+                <p></p>
+            </div>
+    
+           
+            
+            
+            <input type="submit" value="Sign up" id="button">
+        </form>
+
+        <p id="cancel" >Cancel</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footerContainer">
+            <div> 
+                <div class="map"></div>    
+            </div>
+            <div class="info">
+                <p>Phone Number</p>
+                <p>Email@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="formScript.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

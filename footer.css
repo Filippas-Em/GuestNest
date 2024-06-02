@@ -1,0 +1,25 @@
+.footer {
+    background-color: #FF5A5F;
+    min-height: 500px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.map{
+    height: 300px;
+    width: 300px;
+    background-color: white;
+}

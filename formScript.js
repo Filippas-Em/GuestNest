@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
         input.addEventListener('blur', function() {
             if (!this.value) {
                 label.style.transform = "translateY(0px)";
-                label.style.fontSize = "20px";
+                label.style.fontSize = "15px";
                 label.style.color = "black";
             }
         });
