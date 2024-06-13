@@ -16,6 +16,20 @@
     align-items: center;
 }
 
+.info p{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: 10px 0 ;
+}
+
+.info img {
+    margin-right: 5px;
+}
+.info a {
+    margin-left: 5px;
+}
+
 
 
 
