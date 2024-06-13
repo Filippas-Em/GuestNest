@@ -143,7 +143,13 @@
         </div>
 
         <form id="contactFom" class="logIn" action="">
+            <div class="loginText">
+                <h3>Log In</h3>
+                <p>Don't have an account ? <br>Create one !</p>
+            </div>
             
+        
+
             <div class="inputField">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="usernames" class="input">
@@ -161,7 +167,8 @@
             <input type="submit" value="Log In" id="button">
         </form>
  
-        <form id="contactForm" class="signUp hidden" action="">
+        <form id="contactForm" class="signUp hidden" action="signup.php" method="post">
+            <h3>Sign Up</h3>
             <div class="inputField">
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" class="input"> 
@@ -207,8 +214,8 @@
 
     <footer class="footer">
         <div class="footerContainer">
-            <div> 
-                <div class="map"></div>    
+            <div class="mapContainer"> 
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25170.611724393242!2d23.62671809905774!3d37.94616254717455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bbebb7ac3147%3A0xd820da95ff30fdf7!2zzqDOtc65z4HOsc65zqzPgg!5e0!3m2!1sel!2sgr!4v1718112651516!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
             </div>
             <div class="info">
                 <p>Phone Number</p>

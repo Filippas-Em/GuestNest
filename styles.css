@@ -61,9 +61,10 @@ body{
 }
 
 .box img {
-    width: 300px;
+    width: 280px;
+    height: 280px;
     border-radius: 20px;
-
+    object-fit: cover;
 }
 
 .box{
@@ -74,8 +75,13 @@ body{
     align-items: center;
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     min-height: 400px;    
+    transition: all 0.3s ease;
+}
+
+.box:hover{
+    cursor: pointer;
+    scale: 1.01;
 }
 
 .box h3 {
@@ -86,7 +92,6 @@ body{
 .specInfo {
     display: flex;
     width: 100%;
-    margin: 10px 0;
 }
 .location {
     margin-right: auto;
@@ -163,6 +168,8 @@ body{
     justify-content: center;
     align-items: center;
     border: solid 1px #FF5A5F;
+    min-height: 690px;
+    
 }
 
 .authForms form {
@@ -249,3 +256,23 @@ body{
 .drop h3 {
     margin: 10px;
 }
+
+.loginText{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -100px;
+    text-align: center;
+}
+
+.loginText h3 {
+    margin-bottom: 10px;
+}
+
+.loginText p {
+    text-align: center;
+    line-height: 1.5;
+}
+
