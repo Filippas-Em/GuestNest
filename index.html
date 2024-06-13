@@ -23,9 +23,9 @@
         <nav class="desktopNav">
             <ul >
                 <li><a href="">Guest Nest</a></li>
-                <li id="listing"class="lout"><a href="">Create Listing</a></li>
+                <li id="listing"class="createListing hidden"><a href="">Create Listing</a></li>
                 <li id="login" class="login"><a href="#">Log In</a></li>
-                <li id="logout" class="lout" ><a href="">Log Out</a></li>
+                <li id="logout" class="logout " ><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>
         <nav class="mobileNav"></nav>   
@@ -142,7 +142,7 @@
             </div>
         </div>
 
-        <form id="contactFom" class="logIn" action="">
+        <form id="contactFom" class="logIn" action="login.php" method="post">
             <div class="loginText">
                 <h3>Log In</h3>
                 <p>Don't have an account ? <br>Create one !</p>

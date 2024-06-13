@@ -32,3 +32,41 @@ signupPopup.addEventListener("click", function() {
     loginForm.classList.add("hidden");
     signupForm.classList.remove("hidden");
 })
+
+
+const navlist = document.getElementById("listing");
+const navLogin = document.getElementById("login");
+const navLogout = document.getElementById("logout");
+
+function getCookie(name) {
+    let cookies = document.cookie.split('; ');
+    for (let cookie of cookies) {
+        let [cookieName, cookieValue] = cookie.split('=');
+        if (cookieName === name) {
+            return decodeURIComponent(cookieValue);
+        }
+    }
+    return null;
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let loggedIn = getCookie('loggedin');
+    if (loggedIn === "1") {
+        showHiddenFeatures();
+    } else {
+        hideHiddenFeatures();
+    }
+});
+
+function showHiddenFeatures() {
+   navlist.classList.remove("hidden");
+   navLogout.classList.remove("hidden");
+   navLogin.classList.add("hidden");
+}
+
+function hideHiddenFeatures() {
+    navlist.classList.add("hidden");
+    navLogout.classList.add("hidden");
+    navLogin.classList.remove("hidden");
+}
+

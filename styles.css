@@ -52,8 +52,9 @@ body{
     background-color: #f8f8f8;
 }
 
-.lout {
-    display: none;
+
+#logout{
+    margin-left: auto;
 }
 
 #login {

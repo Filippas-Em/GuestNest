@@ -22,7 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_query($conn, $sql)) {
         $_SESSION['username'] = $username;
-        header("Location: welcome.php");
+        $cookie_name = "loggedin";
+        $cookie_value = 1;
+        $cookie_expiration = time() + (86400 * 7); // 1 week
+        setcookie($cookie_name, $cookie_value, $cookie_expiration, "/");
+
+        // Redirect to the homepage
+        header("Location: index.html");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
