@@ -70,3 +70,18 @@ function hideHiddenFeatures() {
     navLogin.classList.remove("hidden");
 }
 
+let buttons = document.getElementsByClassName('bookBtn');
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+        console.log('Button clicked: ' + (i + 1)); // Example: Logging button index
+        let loggedIn = getCookie("loggedin");
+        console.log("Test");
+        if (loggedIn === null){
+        popup.classList.remove("hidden");
+    }
+    });
+}
+
+
+
