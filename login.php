@@ -6,13 +6,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "SELECT id, username, password FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT id, username, password FROM users WHERE username = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
+    mysqli_stmt_close($stmt);
 
     if ($row && password_verify($password, $row['password'])) {
-        // Set session variable
+        // Set session variables
         $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $row['id']; // Store user ID in session
 
         // Set a cookie to indicate the user is logged in
         $cookie_name = "loggedin";

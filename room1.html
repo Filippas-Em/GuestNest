@@ -3,83 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listing</title>
-    
+    <title>Room1</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="navbars.css">
     <link rel="stylesheet" href="forms.css">
-    <link rel="stylesheet" href="listingStyles.css">
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
-
-
     <div class="wrapper">
         <nav class="desktopNav">
             <ul >
                 <li><a href="index.html">Guest Nest</a></li>
-                <li id="listing"class="lout"><a href="">Create Listing</a></li>
+                <li id="listing"class="createListing hidden"><a href="">Create Listing</a></li>
                 <li id="login" class="login"><a href="#">Log In</a></li>
-                <li id="logout" class="lout" ><a href="">Log Out</a></li>
+                <li id="logout" class="logout hidden" ><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>
         <nav class="mobileNav"></nav>   
 
-        <div class="multimedia">
-            
-    
-            <div class="listingContainer">
-                <form class="listingForm" action="create_listing.php" method="POST" enctype="multipart/form-data">
-                    <h3>Create a Listing!</h3>
-                
-                    <div class="inputField">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" class="input"> 
-                        <p></p>
-                    </div>
-                    <div class="inputField">
-                        <label for="location">Apartment Location</label>
-                        <input type="text" name="location" id="location" class="input"> 
-                        <p></p>
-                    </div>
-                    <div class="inputField">
-                        <label for="rooms">Number of Rooms</label>
-                        <input type="text" name="rooms" id="rooms" class="input"> 
-                        <p></p>
-                    </div>
-                    <div class="inputField">
-                        <label for="price">Price per Night</label>
-                        <input type="text" name="price" id="price" class="input"> 
-                        <p></p>
-                    </div>
-                    <div class="inputField">
-                        <label id="desLabel" for="description">Description</label>
-                        <textarea name="description" id="description" class="input"></textarea> 
-                        <p></p>
-                    </div>
-                    <div class="inputField">
-                        <pc class="imageLabel">Upload an image</p>
-                        <input type="file" name="image" id="image" class="input"> 
-                        <p></p>
-                    </div>
-                
-                    <input type="submit" id="button" value="Submit">
-                </form>
-                
-            </div>
-        </div>
-
         
-
     </div>
-    
+
     <div class="authForms hidden" id="test">
         <div class="selection">
             <div class="loginDiv">
@@ -90,8 +38,14 @@
             </div>
         </div>
 
-        <form id="contactFom" class="logIn" action="">
+        <form id="contactFom" class="logIn" action="login.php" method="post">
+            <div class="loginText">
+                <h3>Log In</h3>
+                <p>Don't have an account ? <br>Create one !</p>
+            </div>
             
+        
+
             <div class="inputField">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="usernames" class="input">
@@ -109,7 +63,8 @@
             <input type="submit" value="Log In" id="button">
         </form>
  
-        <form id="contactForm" class="signUp hidden" action="">
+        <form id="contactForm" class="signUp hidden" action="signup.php" method="post">
+            <h3>Sign Up</h3>
             <div class="inputField">
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" class="input"> 
@@ -153,19 +108,33 @@
         <p id="cancel" >Cancel</p>
     </div>
 
-    <footer class="footer">
-        <div class="footerContainer">
-            <div class="mapContainer"> 
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25170.611724393242!2d23.62671809905774!3d37.94616254717455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bbebb7ac3147%3A0xd820da95ff30fdf7!2zzqDOtc65z4HOsc65zqzPgg!5e0!3m2!1sel!2sgr!4v1718112651516!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
-            </div>
-            <div class="info">
-                <p><img src="Assets/phone-call.png" alt=""> Give us a call : <a href="tel:+306943694628">+30 694 369 4628</a></p>
-                <p><img src="Assets/envelope.png" alt=""> Email us: <a href="mailto:emmanouil.filippas@gmail.com">emmanouil.filippas@gmail.com</a></p>
-            </div>
+    <div class="photoContainer">
+        <div class="photo">
+            <img src="Assets/room photo.png" alt="">
+            <div class="description">
+                <h3>Studio 2</h3>
+                <p>Location: Piraeus</p>
+                <p>Rooms: 1</p>
+            </div>     
         </div>
-    </footer>
+        
+    </div>
+    <div class="booking-form">
+        <form id="bookingForm" action="book.php" method="POST">
+            <h3>Check in</h3>
+            <input type="date" id="checkin" name="checkin" required>
+            <h3>Check Out</h3>
+            <input type="date" id="checkout" name="checkout" required>
 
-    <script src="formScript.js"></script>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    
+
+
     <script src="home.js"></script>
+    <script src="formScript.js"></script>
+
 </body>
 </html>

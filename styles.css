@@ -275,3 +275,26 @@ body{
     line-height: 1.5;
 }
 
+.photoContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.photo img {
+    width: 50%;
+    height: 50%;
+    margin: 20px;
+    
+}
+
+.booking-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
