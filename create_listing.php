@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $location = mysqli_real_escape_string($conn, $_POST['location']);
-    $rooms = mysqli_real_escape_string($conn, $_POST['rooms']);
+    $rooms = mysqli_real_escape_string($conn, $_POST['rooms']);  // Assuming rooms is numeric
     $price = mysqli_real_escape_string($conn, $_POST['price']);
     $description = mysqli_real_escape_string($conn, $_POST['description']);
     $user_id = $_SESSION['user_id']; 
@@ -37,15 +37,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            $sql = "INSERT INTO listings (user_id, title, description, price, location, image_path)
-                    VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO listings (user_id, title, description, price, location, image_path, rooms)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "isssss", $user_id, $title, $description, $price, $location, $target_file);
+
+            mysqli_stmt_bind_param($stmt, "issssss", $user_id, $title, $description, $price, $location, $target_file, $rooms);
             mysqli_stmt_execute($stmt);
+
             mysqli_stmt_close($stmt);
 
-            echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
-            header("Location: index.html");
+            echo "Listing created successfully.";
+            header("Location: index.php");
+            exit();
         } else {
             echo "Sorry, there was an error uploading your file.";
         }

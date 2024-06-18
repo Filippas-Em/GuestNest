@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         setcookie($cookie_name, $cookie_value, $cookie_expiration, "/");
 
         // Redirect to the homepage
-        header("Location: index.html");
+        header("Location: index.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

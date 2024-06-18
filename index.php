@@ -1,3 +1,23 @@
+<?php
+session_start();
+include 'config.php';
+
+$sql = "SELECT * FROM listings";
+$result = mysqli_query($conn, $sql);
+
+$listings = [];
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $listings[] = $row;
+    }
+}
+
+mysqli_close($conn);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +51,26 @@
         <nav class="mobileNav"></nav>   
 
         <div class="container">
+            <?php if (!empty($listings)): ?>
+                <?php foreach ($listings as $listing): ?>
+                    <div class="box">
+                        <img src="<?php echo htmlspecialchars($listing['image_path']); ?>" alt="">
+                        <h3><?php echo htmlspecialchars($listing['title']); ?></h3>
+                        <div class="info">
+                            <div class="specInfo">
+                                <p class="location"><?php echo htmlspecialchars($listing['location']); ?></p>
+                                <p class="rooms">Rooms: <?php echo htmlspecialchars($listing['rooms']); ?></p>
+                            </div>
+                            <p><span class="price"><?php echo htmlspecialchars($listing['price']); ?> €</span> per Night</p>
+                        </div>
+                        <a href="book_listing.php?listing_id=<?php echo htmlspecialchars($listing['id']); ?>&image_path=<?php echo urlencode($listing['image_path']); ?>" class="bookBtn">Book Me</a>
+                        </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No listings available.</p>
+            <?php endif; ?>
+
+
             <div class="box">
                 <img src="Assets/room photo.png" alt="">
                 <h3>Here is the Title</h3>
