@@ -1,0 +1,144 @@
+
+.content{
+    display: flex;
+    width: 100%;
+}
+
+.information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 60px;
+    font-size: 25px;
+}
+
+.data{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.dataText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.dataText p{
+    display: flex;
+    align-items: center;
+}
+
+.dataText p img {
+    margin-right: 10px;
+}
+
+.dataImage img {
+    width: 700px;
+    max-width: 100%;
+    height: auto;
+}
+
+.dataTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#title{
+    margin-bottom: 10px;
+}
+.dataPrice {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+#price {
+    margin-left: 50px;
+   
+}
+#location{
+    font-size: 30px;
+}
+
+
+
+.datePicker form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid gray;
+    min-height: 421px;
+    min-width: 285;
+}
+
+.datePicker form input {
+    width: 90%;
+    margin: 10px 0;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+}
+
+.datePicker form h4 {
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+#button{
+    width: 190px;
+    margin-top: auto;
+    font-size: 20px;
+    background-color: #FF5A5F;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #ff7d81 ;
+    scale: 1.05;
+}
+
+#bookButton{
+    width: 190px;
+    margin-top: auto;
+    font-size: 20px;
+    background-color: #FF5A5F;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    transition: all 0.4s ease;
+}
+#bookButton:hover {
+    cursor: pointer;
+    background-color: #ff7d81 ;
+    scale: 1.05;
+}
+
+.datePicker form a {
+    color: black;
+    font-size: 20px;
+}
+
+.pseudolink {
+    height: 24px;
+}
+
+.hidden{
+    display: none;
+}
