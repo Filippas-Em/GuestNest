@@ -63,7 +63,18 @@ mysqli_close($conn);
                             </div>
                             <p><span class="price"><?php echo htmlspecialchars($listing['price']); ?> €</span> per Night</p>
                         </div>
-                        <a href="book_listing.php?listing_id=<?php echo htmlspecialchars($listing['id']); ?>&image_path=<?php echo urlencode($listing['image_path']); ?>" class="bookBtn">Book Me</a>
+                        <?php
+
+                                if (isset($_SESSION['user_id'])) {
+                                    ?>
+                                    <a href="book_listing.php?listing_id=<?php echo htmlspecialchars($listing['id']); ?>&image_path=<?php echo urlencode($listing['image_path']); ?>" id="bookBtn" class="bookBtn">Book Me</a>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <button class="bookBtn">Book me</button>
+                                    <?php
+                                }
+                        ?>
                         </div>
                 <?php endforeach; ?>
             <?php else: ?>
@@ -71,102 +82,6 @@ mysqli_close($conn);
             <?php endif; ?>
 
 
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button  class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
-            <div class="box">
-                <img src="Assets/room photo.png" alt="">
-                <h3>Here is the Title</h3>
-                <div class="info">
-                    <div class="specInfo">
-                        <p class="location">Kallithea</p>
-                        <p class="rooms">Rooms: 2</p>
-                    </div>
-                    <p> <span class="price">80 €</span> per Night</p>
-                </div>
-                <button class="bookBtn">Book Me</button>
-            </div>
            
 
         </div>
@@ -265,6 +180,6 @@ mysqli_close($conn);
     </footer>
 
     <script src="formScript.js"></script>
-    <script src="home.js"></script>
+    <script src="homeNew.js"></script>
 </body>
 </html>

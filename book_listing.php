@@ -2,12 +2,16 @@
 session_start();
 include 'config.php';
 
+
 if (isset($_GET['listing_id'])) {
+    //save the listing id in order to know which listing to populate the page with
     $listing_id = mysqli_real_escape_string($conn, $_GET['listing_id']);
 
+    // find the correct column in the listing table using the listing id and fetch its data
     $sql = "SELECT * FROM listings WHERE id = '$listing_id'";
     $result = mysqli_query($conn, $sql);
     
+    //fetch and save the data in variables
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $title = $row['title'];
@@ -21,9 +25,12 @@ if (isset($_GET['listing_id'])) {
         echo 'Listing not found.';
     }
 
+        
+    
+    // find the correct column in the listing table using the user id and fetch its data
     $sql = "SELECT * FROM users WHERE id = '$user_id'";
     $result = mysqli_query($conn, $sql);
-
+    //fetch and save the data in variables
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $first_name = $row['first_name'];

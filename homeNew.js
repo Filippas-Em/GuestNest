@@ -8,8 +8,9 @@ const signupForm = document.querySelector(".signUp") ;
 const linkCheck = document.getElementById("linkCheck");
 
 
+
+//signup login form show
 login.addEventListener("click", function() {
-    console.log("Hello");
     popup.classList.remove("hidden");
 })
 cancel.addEventListener("click", function() {
@@ -17,17 +18,16 @@ cancel.addEventListener("click", function() {
 })
 
 
-
+//login button style changes when clicked
 loginPopup.addEventListener("click", function() {
-    console.log("Hey");
     signupPopup.style.backgroundColor = "#FF5A5F";
     loginPopup.style.backgroundColor = "white";
     loginForm.classList.remove("hidden");
     signupForm.classList.add("hidden");
 })
+//login button style changes when clicked
 
 signupPopup.addEventListener("click", function() {
-    console.log("Hey")
     signupPopup.style.backgroundColor = "white";
     loginPopup.style.backgroundColor = "#FF5A5F";
     loginForm.classList.add("hidden");
@@ -51,35 +51,37 @@ function getCookie(name) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    
     let loggedIn = getCookie('loggedin');
     if (loggedIn === "1") {
+        //if cookie value is one it means the user is logged in and we can show the hidden features
         showHiddenFeatures();
     } else {
         hideHiddenFeatures();
     }
 });
 
-function showHiddenFeatures() {
+//declare functions for user form
+function showHiddenFeatures() {  
    navlist.classList.remove("hidden");
    navLogout.classList.remove("hidden");
    navLogin.classList.add("hidden");
 }
-
+//declare functions for user form
 function hideHiddenFeatures() {
     navlist.classList.add("hidden");
     navLogout.classList.add("hidden");
     navLogin.classList.remove("hidden");
 }
 
-const buttons = document.getElementsById('bookBtn');
+const buttons = document.getElementsByClassName('bookBtn');
 
 
 
 for (let i = 0; i < buttons.length; i++) {
 
-
+    //show the login popup if a user isnt logged in and tries to book a room
     buttons[i].addEventListener('click', function() {
-        console.log("test");
         let loggedIn = getCookie("loggedin");
         if (loggedIn === null){
         popup.classList.remove("hidden");

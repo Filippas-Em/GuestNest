@@ -10,30 +10,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const total = document.getElementById("totalDisplay");
     
 
-
+    // check for availability
     if (checkDatesForm) {
         checkDatesForm.addEventListener('submit', function(event) {
+            //when the form is submitted prevent it from reloading the page
             event.preventDefault();
-
+            //catch the forms input in a variable
             const formData = new FormData(checkDatesForm);
-
+            //pass the form data to php to check for availability
             fetch('check_availability.php', {
                 method: 'POST',
                 body: formData
             })
+            //retrieve the json file 
             .then(response => response.json())
             .then(data => {
-                console.log(data.status);
-                console.log(data);
                 if (data.status === 'available') {
+                    //if it is available dont show any message 
                     availabilityMessage.innerText = "";
-                    
+                    //calculate the discount
                     let perc = Math.floor(Math.random() * (30 - 10 + 1)) + 10 ;
                     price.innerText =`€ ${data.days * data.listing_price }` ;
                     discount.innerText = `${perc}%`; 
                     total.innerText = `€ ${ data.days * data.listing_price - data.days * data.listing_price * perc/100} ` ;
                     
-
+                    // hide the old form
                     Array.from(availabilityVisibility).forEach(element => {
                         element.classList.add("hidden");
                     });
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     bookingForm.classList.remove('hidden');
 
                     checkDatesForm.classList.add('hidden');
-
+                    //show the new booking form
                     Array.from(bookingVisibility).forEach(element => {
                         element.classList.remove("hidden");
                     });
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backButton) {
         backButton.addEventListener('click', function(event) {
             event.preventDefault();
-
+            //functionality for the back button in case the user wants to select new dates
             Array.from(availabilityVisibility).forEach(element => {
                 element.classList.remove("hidden");
             });

@@ -1,20 +1,21 @@
 <?php
 session_start();
 include 'config.php';
-
+//if user isnt logged in deny access
 if (!isset($_SESSION['user_id'])) {
     echo "You need to be logged in to create a listing.";
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //get user inputs
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $location = mysqli_real_escape_string($conn, $_POST['location']);
-    $rooms = mysqli_real_escape_string($conn, $_POST['rooms']);  // Assuming rooms is numeric
+    $rooms = mysqli_real_escape_string($conn, $_POST['rooms']);  
     $price = mysqli_real_escape_string($conn, $_POST['price']);
     $description = mysqli_real_escape_string($conn, $_POST['description']);
     $user_id = $_SESSION['user_id']; 
-
+    //target dir is the dir the photos will be saved
     $target_dir = "Assets/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

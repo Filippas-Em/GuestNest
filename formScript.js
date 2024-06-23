@@ -1,6 +1,8 @@
 
 form = document.getElementById("contactForm");
 
+//functionality for the form inputs e.g. value validation and messages in case its not valid (red border,label move when input populated)
+
 form.addEventListener('input', function(event) {
     const inputs = document.querySelectorAll("#firstName, #lastName");
 
