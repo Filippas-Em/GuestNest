@@ -1,0 +1,84 @@
+.off-screen-menu {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+    line-height: 2;
+    z-index: 1000;
+}
+
+.off-screen-menu a {
+    color: black;
+}
+.off-screen-menu ul {
+    list-style-type: none ;    
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+}
+
+
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s ease;
+    z-index: 1001;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(2) {
+    top: 50%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: center;
+}

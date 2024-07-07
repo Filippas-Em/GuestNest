@@ -25,9 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$first_name', '$last_name', '$username', '$email', '$hashed_password')";
 
     if (mysqli_query($conn, $sql)) {
+       // Get the last inserted ID
+       $user_id = mysqli_insert_id($conn);
+
        // Set session variables
        $_SESSION['username'] = $username;
-       $_SESSION['user_id'] = $row['id']; // Store user ID in session
+       $_SESSION['user_id'] = $user_id;
 
        // Set a cookie to indicate the user is logged in
        $cookie_name = "loggedin";
@@ -37,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirect to the homepage
         header("Location: index.php");
+        exit(); // Don't forget to exit after redirection
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

@@ -144,10 +144,16 @@ body{
 }
 
 
+.listingContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .listingForm {
+    padding-top: 10px ;
+    padding-bottom: 10px;
     margin: 20px;
-    padding: 10px;
 }
 
 
@@ -314,3 +320,15 @@ body{
 .rooms{
     margin-left: 10px;
 }
+
+@media screen and (max-width: 450px) {
+    .desktopNav{
+        display: none;
+    }
+  }
+  @media screen and (min-width: 451px) {
+    
+    .ham-menu{
+        display: none;
+    }
+  }

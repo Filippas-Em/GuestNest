@@ -27,8 +27,9 @@ if (isset($_GET['listing_id'])) {
 
         
     
-    // find the correct column in the listing table using the user id and fetch its data
-    $sql = "SELECT * FROM users WHERE id = '$user_id'";
+    // find the correct column in the listing table using the user id and fetch its data.
+    $bookingUser_id = $_SESSION['user_id']; 
+    $sql = "SELECT * FROM users WHERE id = '$bookingUser_id'";
     $result = mysqli_query($conn, $sql);
     //fetch and save the data in variables
     if (mysqli_num_rows($result) > 0) {
@@ -57,6 +58,7 @@ if (isset($_GET['listing_id'])) {
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="navbars.css">
     <link rel="stylesheet" href="bookingStylesNew.css">
+    <link rel="stylesheet" href="hamNav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -70,6 +72,22 @@ if (isset($_GET['listing_id'])) {
                 <li id="logout" class="logout"><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>
+        <div class="off-screen-menu"> 
+            <ul >
+                <li><a href="index.php">Home</a></li>
+                <li id="listing2"class="createListing hidden"><a href="listing.html">Create Listing</a></li>
+                <li id="login2" class="login"><a href="#">Log In</a></li>
+                <li id="logout2" class="logout " ><a href="logout.php">Log Out</a></li>
+            </ul>
+        </div>
+        
+        <nav>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>   
     </div>
     
     <div class="content">
@@ -161,6 +179,7 @@ if (isset($_GET['listing_id'])) {
     </footer>
 
     <script src="script.js"></script>
-
+    <script src="hamNavjs.js"></script>
+                
 </body>
 </html>

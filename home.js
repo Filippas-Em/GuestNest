@@ -9,7 +9,6 @@ const linkCheck = document.getElementById("linkCheck");
 
 
 login.addEventListener("click", function() {
-    console.log("Hello");
     popup.classList.remove("hidden");
 })
 cancel.addEventListener("click", function() {
@@ -19,7 +18,6 @@ cancel.addEventListener("click", function() {
 
 
 loginPopup.addEventListener("click", function() {
-    console.log("Hey");
     signupPopup.style.backgroundColor = "#FF5A5F";
     loginPopup.style.backgroundColor = "white";
     loginForm.classList.remove("hidden");
@@ -27,7 +25,6 @@ loginPopup.addEventListener("click", function() {
 })
 
 signupPopup.addEventListener("click", function() {
-    console.log("Hey")
     signupPopup.style.backgroundColor = "white";
     loginPopup.style.backgroundColor = "#FF5A5F";
     loginForm.classList.add("hidden");

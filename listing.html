@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="navbars.css">
     <link rel="stylesheet" href="forms.css">
     <link rel="stylesheet" href="listingStyles.css">
+    <link rel="stylesheet" href="hamNav.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,22 @@
                 <li id="logout" class="lout" ><a href="">Log Out</a></li>
             </ul>
         </nav>
-        <nav class="mobileNav"></nav>   
+        <div class="off-screen-menu"> 
+            <ul >
+                <li><a href="index.php">Home</a></li>
+                <li id="listing2"class="createListing hidden"><a href="listing.html">Create Listing</a></li>
+                <li id="login2" class="login"><a href="#">Log In</a></li>
+                <li id="logout2" class="logout " ><a href="logout.php">Log Out</a></li>
+            </ul>
+        </div>
+        
+        <nav>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>    
 
         <div class="multimedia">
             
@@ -167,5 +183,7 @@
 
     <script src="formScript.js"></script>
     <script src="home.js"></script>
+    <script src="hamNavjs.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,5 @@
 const login = document.getElementById("login") ;
+const login2 = document.getElementById("login2");
 const popup = document.getElementById("test");
 const cancel = document.getElementById("cancel");
 const loginPopup = document.getElementById("loginpopup");
@@ -9,10 +10,16 @@ const linkCheck = document.getElementById("linkCheck");
 
 
 
+
 //signup login form show
 login.addEventListener("click", function() {
     popup.classList.remove("hidden");
 })
+login2.addEventListener("click", function() {
+    popup.classList.remove("hidden");
+    console.log("clicked");
+})
+
 cancel.addEventListener("click", function() {
     popup.classList.add("hidden");
 })
@@ -38,6 +45,12 @@ signupPopup.addEventListener("click", function() {
 const navlist = document.getElementById("listing");
 const navLogin = document.getElementById("login");
 const navLogout = document.getElementById("logout");
+
+const navlist2 = document.getElementById("listing2");
+const navLogin2 = document.getElementById("login2");
+const navLogout2 = document.getElementById("logout2");
+
+
 
 function getCookie(name) {
     let cookies = document.cookie.split('; ');
@@ -66,12 +79,18 @@ function showHiddenFeatures() {
    navlist.classList.remove("hidden");
    navLogout.classList.remove("hidden");
    navLogin.classList.add("hidden");
+   navlist2.classList.remove("hidden");
+   navLogout2.classList.remove("hidden");
+   navLogin2.classList.add("hidden");
 }
 //declare functions for user form
 function hideHiddenFeatures() {
     navlist.classList.add("hidden");
     navLogout.classList.add("hidden");
     navLogin.classList.remove("hidden");
+    navlist2.classList.add("hidden");
+    navLogout2.classList.add("hidden");
+    navLogin2.classList.remove("hidden");
 }
 
 const buttons = document.getElementsByClassName('bookBtn');

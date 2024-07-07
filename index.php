@@ -29,7 +29,8 @@ mysqli_close($conn);
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="navbars.css">
     <link rel="stylesheet" href="forms.css">
-
+    <link rel="stylesheet" href="hamNav.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -48,7 +49,23 @@ mysqli_close($conn);
                 <li id="logout" class="logout " ><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>
-        <nav class="mobileNav"></nav>   
+
+        <div class="off-screen-menu"> 
+            <ul >
+                <li><a href="">Home</a></li>
+                <li id="listing2"class="createListing hidden"><a href="listing.html">Create Listing</a></li>
+                <li id="login2" class="login"><a href="#">Log In</a></li>
+                <li id="logout2" class="logout " ><a href="logout.php">Log Out</a></li>
+            </ul>
+        </div>
+        
+        <nav>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>   
 
         <div class="container">
             <?php if (!empty($listings)): ?>
@@ -179,6 +196,7 @@ mysqli_close($conn);
         </div>
     </footer>
 
+    <script src="hamNavjs.js"></script>
     <script src="formScript.js"></script>
     <script src="homeNew.js"></script>
 </body>
