@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     let perc = Math.floor(Math.random() * (30 - 10 + 1)) + 10 ;
                     price.innerText =`€ ${data.days * data.listing_price }` ;
                     discount.innerText = `${perc}%`; 
-                    total.innerText = `€ ${ data.days * data.listing_price - data.days * data.listing_price * perc/100} ` ;
+                    let discountedPrice =  data.days * data.listing_price - data.days * data.listing_price * perc/100 ;
+                    total.innerText = `€ ${ Math.floor(discountedPrice)} ` ;
                     
                     // hide the old form
                     Array.from(availabilityVisibility).forEach(element => {

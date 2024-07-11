@@ -71,42 +71,18 @@ mysqli_close($conn);
         </nav>   
 
         <div class="container">
-            <?php if (!empty($listings)): ?>
-                <?php foreach ($listings as $listing): ?>
-
-                        <div class="box animation">
-                            <img src="<?php echo htmlspecialchars($listing['image_path']); ?>" alt="">
-                            <h3><?php echo htmlspecialchars($listing['title']); ?></h3>
-                            <div class="info">
-                                <div class="specInfo">
-                                    <p class="location"><?php echo htmlspecialchars($listing['location']); ?></p>
-                                    <p class="rooms">Rooms: <?php echo htmlspecialchars($listing['rooms']); ?></p>
-                                </div>
-                                <p><span class="price"><?php echo htmlspecialchars($listing['price']); ?> €</span> per Night</p>
-                            </div>
-                            <?php
-
-                                    if (isset($_SESSION['user_id'])) {
-                                        ?>
-                                        <a href="book_listing.php?listing_id=<?php echo htmlspecialchars($listing['id']); ?>&image_path=<?php echo urlencode($listing['image_path']); ?>" id="bookBtn" class="bookBtn">Book Me</a>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <button class="bookBtn">Book me</button>
-                                        <?php
-                                    }
-                            ?>
-                        </div>
-        
-                    
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No listings available.</p>
-            <?php endif; ?>
-
-
-           
-
+            <div class="box animation show">
+                <img src="Assets/studiolisting1.jpg" alt="">
+                <h3>Studio 2</h3>
+                <div class="info">
+                    <div class="specInfo">
+                        <p class="location">Pireas</p>
+                        <p class="rooms">Rooms: 1</p>
+                    </div>
+                    <p><span class="price">80 €</span> per Night</p>
+                </div>
+                                                        <a href="book_listing.php?listing_id=9&amp;image_path=Assets%2Fstudiolisting1.jpg" id="bookBtn" class="bookBtn">Book Me</a>
+                                                    </div>
         </div>
     </div>
     
