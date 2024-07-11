@@ -79,7 +79,7 @@ mysqli_close($conn);
                             <h3><?php echo htmlspecialchars($listing['title']); ?></h3>
                             <div class="info">
                                 <div class="specInfo">
-                                    <p class="location"><?php echo htmlspecialchars($listing['location']); ?></p>
+                                    <p class="location" id="loc" style="margin-left: 60px ; margin-right: 20px ;"><?php echo htmlspecialchars($listing['location']); ?></p>
                                     <p class="rooms">Rooms: <?php echo htmlspecialchars($listing['rooms']); ?></p>
                                 </div>
                                 <p><span class="price"><?php echo htmlspecialchars($listing['price']); ?> €</span> per Night</p>
