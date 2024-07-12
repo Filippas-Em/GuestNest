@@ -29,14 +29,13 @@ mysqli_close($conn);
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="navbars.css">
     <link rel="stylesheet" href="forms.css">
-    <link rel="stylesheet" href="hamNav.css">
     <link rel="stylesheet" href="animations.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="hamNav.css">
 </head>
 <body>
 
@@ -52,6 +51,7 @@ mysqli_close($conn);
         </nav>
 
         <div class="off-screen-menu"> 
+            
             <ul >
                 <li><a href="">Home</a></li>
                 <li id="listing2"class="createListing hidden"><a href="listing.html">Create Listing</a></li>
@@ -60,14 +60,18 @@ mysqli_close($conn);
             </ul>
         </div>
         
-        <nav>
-            <div class="navbar">
+        <nav  style= "all: unset; width: 90%; ">
+            <div class="mobcontainer" style="width: 100%; margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.php"><img id="logo" style="width: 50px ;" src="Assets/logo.png" alt=""></a>
+                <div class="navbar" style="display: flex; align-items: center;">
                 <div class="ham-menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
+            </div>
+            
         </nav>   
 
         <div class="container">

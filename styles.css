@@ -336,6 +336,9 @@ body{
     .ham-menu{
         display: none;
     }
+    #logo{
+        display: none;
+    }
 }
 
 

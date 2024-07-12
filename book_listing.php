@@ -81,12 +81,18 @@ if (isset($_GET['listing_id'])) {
             </ul>
         </div>
         
-        <nav>
-            <div class="ham-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav  style= "all: unset; width: 90%; ">
+            <div class="mobcontainer" style="width: 100%; margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.php"><img id="logo" style="width: 50px ;" src="Assets/logo.png" alt=""></a>
+                <div class="navbar" style="display: flex; align-items: center;">
+                <div class="ham-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
+            </div>
+            
         </nav>   
     </div>
     
