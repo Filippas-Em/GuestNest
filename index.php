@@ -96,7 +96,8 @@ mysqli_close($conn);
                                         <?php
                                     } else {
                                         ?>
-                                        <button class="bookBtn">Book me</button>
+                                        <button class="bookBtn" id="bookbtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Book me</button>
+
                                         <?php
                                     }
                             ?>
@@ -224,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.animation');
     hiddenElements.forEach((el) => observer.observe(el));
 });
+
 </script>
 
 </body>

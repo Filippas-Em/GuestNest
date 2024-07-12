@@ -71,15 +71,16 @@ function hideHiddenFeatures() {
 const buttons = document.getElementsById('bookBtn');
 
 
-
 for (let i = 0; i < buttons.length; i++) {
 
 
     buttons[i].addEventListener('click', function() {
-        console.log("test");
+
         let loggedIn = getCookie("loggedin");
         if (loggedIn === null){
+        console.log("erer");
         popup.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     });
 }
