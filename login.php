@@ -2,12 +2,14 @@
 session_start();
 include 'config.php';
 
+$response = array('status' => 'failed');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //get userdata from the form
+    // Get user data from the form
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    //fetch users data
+    // Fetch user data
     $sql = "SELECT id, username, password FROM users WHERE username = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $username);
@@ -27,11 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $cookie_expiration = time() + (86400 * 7); // 1 week
         setcookie($cookie_name, $cookie_value, $cookie_expiration, "/");
 
-        // Redirect to the homepage
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Invalid username or password!";
+        // Update response status to success
+        $response['status'] = 'success';
     }
 }
+
+mysqli_close($conn);
+
+// Return JSON response
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
