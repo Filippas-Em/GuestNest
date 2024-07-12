@@ -125,7 +125,7 @@ mysqli_close($conn);
             </div>
         </div>
 
-        <form id="contactFom" class="logIn" action="login.php" method="post">
+        <form id="contactFom" class="logIn"  method="post">
             <div class="loginText">
                 <h3>Log In</h3>
                 <p>Don't have an account ? <br>Create one !</p>
@@ -147,6 +147,8 @@ mysqli_close($conn);
                 <p id="passwordText"></p>
             </div>
         
+            <p id="failMessage" style="height: 20px; color: red; font-weight:heavy;"></p>
+
             <input type="submit" value="Log In" id="button">
         </form>
  
@@ -227,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+<script src="invalid.js"></script>
 
 </body>
 </html>
